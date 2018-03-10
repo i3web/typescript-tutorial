@@ -203,8 +203,8 @@ function reverse(x: number | string): number | string {
         return Number(x.toString().split('').reverse().join(''));
     } else if (typeof x === 'string') {
         return x.split('').reverse().join('');
-    }
-}
+    }//ts版本2.7.2中，这里会返回一个错误：'函数缺少结束返回语句，返回类型不包括 "undefined"。'
+
 ```
 
 上例中，我们重复定义了多次函数 `reverse`，前几次都是函数定义，最后一次是函数实现。在编辑器的代码提示中，可以正确的看到前两个提示。
